@@ -2358,7 +2358,7 @@ void cut_Input(size_t size, const char *bytes) {
     TCHAR tmpName[MAX_PATH + 1];
 
     if (GetTempPath(sizeof(tmpPath) - 1, tmpPath) == 0)
-        cut_FatalExit("cannot determine Windows temporary directory path");
+        cut_FatalExit("cannot determine Windows temporary directory name");
 
     if (GetTempFileName(tmpPath, "cut", 0, tmpName) == 0)
         cut_FatalExit("cannot get temporary file name");
@@ -2499,7 +2499,7 @@ CUT_PRIVATE void cut_ParseArguments(int argc, char **argv) {
     static const char *output = "--output";
     static const char *subtest = "--subtest";
     static const char *exactTest = "--test";
-    static const char *shortPath = "--short-path";
+    static const char *shortPath = "--short-name";
     cut_arguments.help = 0;
     cut_arguments.list_tests = 0;
     cut_arguments.timeout = CUT_TIMEOUT;
@@ -2640,7 +2640,7 @@ CUT_PRIVATE int cut_Help() {
     "\t--no-color        Turn off colors.\n"
     "\t--exact-match     Match test and subtest names precisely.\n"
     "\t--output <file>   Redirect output to the file.\n"
-    "\t--short-path <N>  Make filenames in the output shorter.\n"
+    "\t--short-name <N>  Make filenames in the output shorter.\n"
     "\n"
     "Hidden options (for internal purposes only):\n"
     "\t--test <N>        Run test of index N.\n"

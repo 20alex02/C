@@ -52,7 +52,7 @@ Write a `test_NAME()` function for your test.
 
 * Optionally modify the tree structure.
 
-* Finally, execute your binary. The path to this binary is available in `$EXE`
+* Finally, execute your binary. The name to this binary is available in `$EXE`
   variable, for example
 
       du -s basic_tree

@@ -29,7 +29,7 @@ target_link_libraries(${EXECUTABLE} PUBLIC "-lm")
 file(GLOB TESTS_CUT "tests-cut/tests-*.c")
 set(LIB_CUT cutobj)
 
-add_library(${LIB_CUT} ${SOURCES})
+add_library(${LIB_CUT} ${SOURCES} main.c global.h load_data.c load_data.h print_data.c print_data.h)
 target_compile_definitions(${LIB_CUT} PUBLIC ${FEATURE_MACROS})
 
 set(EXE_CUT ${EXECUTABLE}-tests-cut)
